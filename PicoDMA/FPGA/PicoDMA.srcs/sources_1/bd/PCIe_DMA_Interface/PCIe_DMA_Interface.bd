@@ -10,7 +10,11 @@
       "tool_version": "2021.2"
     },
     "design_tree": {
-      "xdma_0": ""
+      "xdma_0": "",
+      "VendorId": "",
+      "DevId": "",
+      "RevId": "",
+      "xlconstant_3": ""
     },
     "components": {
       "xdma_0": {
@@ -18,6 +22,14 @@
         "xci_name": "PCIe_DMA_Interface_xdma_0_0",
         "xci_path": "ip\\PCIe_DMA_Interface_xdma_0_0\\PCIe_DMA_Interface_xdma_0_0.xci",
         "inst_hier_path": "xdma_0",
+        "parameters": {
+          "axilite_master_en": {
+            "value": "true"
+          },
+          "pcie_id_if": {
+            "value": "true"
+          }
+        },
         "interface_ports": {
           "M_AXI": {
             "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
@@ -28,6 +40,16 @@
               "maximum": "0xFFFFFFFFFFFFFFFF",
               "width": "64"
             }
+          },
+          "M_AXI_LITE": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Master",
+            "address_space_ref": "M_AXI_LITE",
+            "base_address": {
+              "minimum": "0x00000000",
+              "maximum": "0xFFFFFFFF",
+              "width": "32"
+            }
           }
         },
         "addressing": {
@@ -35,9 +57,84 @@
             "M_AXI": {
               "range": "16E",
               "width": "64"
+            },
+            "M_AXI_LITE": {
+              "range": "4G",
+              "width": "32"
             }
           }
         }
+      },
+      "VendorId": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "PCIe_DMA_Interface_xlconstant_0_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_0\\PCIe_DMA_Interface_xlconstant_0_0.xci",
+        "inst_hier_path": "VendorId",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "DevId": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "PCIe_DMA_Interface_xlconstant_0_1",
+        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_1\\PCIe_DMA_Interface_xlconstant_0_1.xci",
+        "inst_hier_path": "DevId",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "16"
+          }
+        }
+      },
+      "RevId": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "PCIe_DMA_Interface_xlconstant_0_2",
+        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_2\\PCIe_DMA_Interface_xlconstant_0_2.xci",
+        "inst_hier_path": "RevId",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "8"
+          }
+        }
+      },
+      "xlconstant_3": {
+        "vlnv": "xilinx.com:ip:xlconstant:1.1",
+        "xci_name": "PCIe_DMA_Interface_xlconstant_0_3",
+        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_3\\PCIe_DMA_Interface_xlconstant_0_3.xci",
+        "inst_hier_path": "xlconstant_3",
+        "parameters": {
+          "CONST_WIDTH": {
+            "value": "16"
+          }
+        }
+      }
+    },
+    "nets": {
+      "DevId_dout": {
+        "ports": [
+          "DevId/dout",
+          "xdma_0/cfg_dev_id_pf0"
+        ]
+      },
+      "xlconstant_0_dout": {
+        "ports": [
+          "VendorId/dout",
+          "xdma_0/cfg_subsys_vend_id",
+          "xdma_0/cfg_vend_id"
+        ]
+      },
+      "xlconstant_2_dout": {
+        "ports": [
+          "RevId/dout",
+          "xdma_0/cfg_rev_id_pf0"
+        ]
+      },
+      "xlconstant_3_dout": {
+        "ports": [
+          "xlconstant_3/dout",
+          "xdma_0/cfg_subsys_id_pf0"
+        ]
       }
     }
   }
