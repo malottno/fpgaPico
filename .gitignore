@@ -1,6 +1,12 @@
 
 *.xci
 *.bda
-PicoDMA/FPGA/**/*.xml
+PicoDMA/**/*.xml
 PicoDMA/FPGA/PicoDMA.hw/PicoDMA.lpr
 PicoDMA/FPGA/PicoDMA.cache/wt/project.wpc
+*.aps
+*.directive
+*.launch
+*.apfmapping
+PicoDMA/HLS/.cproject
+PicoDMA/HLS/.project
