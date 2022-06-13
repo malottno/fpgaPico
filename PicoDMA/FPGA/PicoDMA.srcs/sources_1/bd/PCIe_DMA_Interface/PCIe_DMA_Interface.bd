@@ -1,0 +1,44 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x0",
+      "device": "xc7a50tcsg325-2",
+      "gen_directory": "../../../../PicoDMA.gen/sources_1/bd/PCIe_DMA_Interface",
+      "name": "PCIe_DMA_Interface",
+      "rev_ctrl_bd_flag": "RevCtrlBdOff",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2021.2"
+    },
+    "design_tree": {
+      "xdma_0": ""
+    },
+    "components": {
+      "xdma_0": {
+        "vlnv": "xilinx.com:ip:xdma:4.1",
+        "xci_name": "PCIe_DMA_Interface_xdma_0_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_xdma_0_0\\PCIe_DMA_Interface_xdma_0_0.xci",
+        "inst_hier_path": "xdma_0",
+        "interface_ports": {
+          "M_AXI": {
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
+            "mode": "Master",
+            "address_space_ref": "M_AXI",
+            "base_address": {
+              "minimum": "0x00000000",
+              "maximum": "0xFFFFFFFFFFFFFFFF",
+              "width": "64"
+            }
+          }
+        },
+        "addressing": {
+          "address_spaces": {
+            "M_AXI": {
+              "range": "16E",
+              "width": "64"
+            }
+          }
+        }
+      }
+    }
+  }
+}
