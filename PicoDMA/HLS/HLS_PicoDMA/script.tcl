@@ -11,7 +11,7 @@ add_files -tb HLS/interface_test.c
 open_solution "HLS_PicoDMA" -flow_target vivado
 set_part {xc7a50tcsg325-2}
 create_clock -period 10 -name default
-config_export -output C:/Users/Nick/git/fpgaPico/PicoDMA/IP_Library
+config_export -format ip_catalog -output C:/Users/Nick/git/fpgaPico/PicoDMA/IP_Library -rtl verilog
 source "./HLS/HLS_PicoDMA/directives.tcl"
 csim_design -clean -O
 csynth_design

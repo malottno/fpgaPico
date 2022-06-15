@@ -2,7 +2,8 @@
 
 int main(){
 
-	int din[10][10], dout;
+	int din[10][10];
+	int dout;
 
 	int i, retval = 0;
 
@@ -13,7 +14,7 @@ int main(){
 	}
 
 	//Call the function
-	dout = passPointerArray(din);
+	passPointerArray(din, dout);
 
 	if(dout == total){
 		printf("TEST PASSED!");

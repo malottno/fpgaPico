@@ -7,8 +7,7 @@
 
 typedef int data_t;
 
-data_t passPointerArray(data_t B[10][10]);
-
+data_t passPointerArray(data_t B[10][10], int sum);
 
 #endif
 

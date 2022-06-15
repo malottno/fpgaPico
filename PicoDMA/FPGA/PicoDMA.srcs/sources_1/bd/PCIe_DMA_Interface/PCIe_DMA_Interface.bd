@@ -14,7 +14,16 @@
       "VendorId": "",
       "DevId": "",
       "RevId": "",
-      "xlconstant_3": ""
+      "xlconstant_3": "",
+      "clk_wiz": "",
+      "passPointerArray_0": ""
+    },
+    "interface_ports": {
+      "pcie_mgt": {
+        "mode": "Master",
+        "vlnv_bus_definition": "xilinx.com:interface:pcie_7x_mgt:1.0",
+        "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
+      }
     },
     "components": {
       "xdma_0": {
@@ -67,8 +76,8 @@
       },
       "VendorId": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "PCIe_DMA_Interface_xlconstant_0_0",
-        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_0\\PCIe_DMA_Interface_xlconstant_0_0.xci",
+        "xci_name": "PCIe_DMA_Interface_VendorId_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_VendorId_0_1\\PCIe_DMA_Interface_VendorId_0.xci",
         "inst_hier_path": "VendorId",
         "parameters": {
           "CONST_WIDTH": {
@@ -78,8 +87,8 @@
       },
       "DevId": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "PCIe_DMA_Interface_xlconstant_0_1",
-        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_1\\PCIe_DMA_Interface_xlconstant_0_1.xci",
+        "xci_name": "PCIe_DMA_Interface_DevId_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_DevId_0_1\\PCIe_DMA_Interface_DevId_0.xci",
         "inst_hier_path": "DevId",
         "parameters": {
           "CONST_WIDTH": {
@@ -89,8 +98,8 @@
       },
       "RevId": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "PCIe_DMA_Interface_xlconstant_0_2",
-        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_2\\PCIe_DMA_Interface_xlconstant_0_2.xci",
+        "xci_name": "PCIe_DMA_Interface_RevId_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_RevId_0_1\\PCIe_DMA_Interface_RevId_0.xci",
         "inst_hier_path": "RevId",
         "parameters": {
           "CONST_WIDTH": {
@@ -100,14 +109,40 @@
       },
       "xlconstant_3": {
         "vlnv": "xilinx.com:ip:xlconstant:1.1",
-        "xci_name": "PCIe_DMA_Interface_xlconstant_0_3",
-        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_0_3\\PCIe_DMA_Interface_xlconstant_0_3.xci",
+        "xci_name": "PCIe_DMA_Interface_xlconstant_3_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_xlconstant_3_0_1\\PCIe_DMA_Interface_xlconstant_3_0.xci",
         "inst_hier_path": "xlconstant_3",
         "parameters": {
           "CONST_WIDTH": {
             "value": "16"
           }
         }
+      },
+      "clk_wiz": {
+        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
+        "xci_name": "PCIe_DMA_Interface_clk_wiz_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_clk_wiz_0\\PCIe_DMA_Interface_clk_wiz_0.xci",
+        "inst_hier_path": "clk_wiz"
+      },
+      "passPointerArray_0": {
+        "vlnv": "xilinx.com:hls:passPointerArray:1.0",
+        "xci_name": "PCIe_DMA_Interface_passPointerArray_0_5",
+        "xci_path": "ip\\PCIe_DMA_Interface_passPointerArray_0_5\\PCIe_DMA_Interface_passPointerArray_0_5.xci",
+        "inst_hier_path": "passPointerArray_0"
+      }
+    },
+    "interface_nets": {
+      "xdma_0_M_AXI_LITE": {
+        "interface_ports": [
+          "xdma_0/M_AXI_LITE",
+          "passPointerArray_0/s_axi_control"
+        ]
+      },
+      "xdma_0_pcie_mgt": {
+        "interface_ports": [
+          "pcie_mgt",
+          "xdma_0/pcie_mgt"
+        ]
       }
     },
     "nets": {
@@ -115,6 +150,12 @@
         "ports": [
           "DevId/dout",
           "xdma_0/cfg_dev_id_pf0"
+        ]
+      },
+      "clk_wiz_clk_out1": {
+        "ports": [
+          "clk_wiz/clk_out1",
+          "xdma_0/sys_clk"
         ]
       },
       "xlconstant_0_dout": {

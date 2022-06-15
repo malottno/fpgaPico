@@ -3,10 +3,11 @@
 data_t A[10][10];
 
 
-data_t passPointerArray(data_t B[10][10]) {
-#pragma HLS INTERFACE mode=s_axilite port=B
+data_t passPointerArray(data_t B[10][10], int sum) {
+	data_t i, j;
 
-	data_t i, j, sum;
+#pragma HLS INTERFACE mode=s_axilite port=B
+#pragma HLS INTERFACE s_axilite port=sum
 
 	//Copy Array
 	for(i = 0; i < 10; i++)
