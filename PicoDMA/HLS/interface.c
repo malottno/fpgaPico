@@ -4,6 +4,7 @@ data_t A[10][10];
 
 
 data_t passPointerArray(data_t B[10][10]) {
+#pragma HLS INTERFACE mode=s_axilite port=B
 
 	data_t i, j, sum;
 

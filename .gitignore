@@ -24,3 +24,4 @@ PicoDMA/HLS/HLS_PicoDMA/sim/*
 PicoDMA/HLS/HLS_PicoDMA/syn/*
 PicoDMA/HLS/.apc/*
 PicoDMA/IP_Library/export.zip
+PicoDMA/IP_Library/*
