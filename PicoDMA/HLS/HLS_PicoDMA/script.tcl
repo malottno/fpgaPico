@@ -4,11 +4,16 @@
 ## Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project HLS
+set_top passPointerArray
+add_files HLS/interface.c
+add_files HLS/interface.h
+add_files -tb HLS/interface_test.c
 open_solution "HLS_PicoDMA" -flow_target vivado
 set_part {xc7a50tcsg325-2}
 create_clock -period 10 -name default
+config_export -output C:/Users/Nick/git/fpgaPico/PicoDMA/IP_Library
 #source "./HLS/HLS_PicoDMA/directives.tcl"
-#csim_design
+csim_design -clean -O
 csynth_design
-#cosim_design
-export_design -format ip_catalog
+cosim_design -O
+export_design -rtl verilog -format ip_catalog -output C:/Users/Nick/git/fpgaPico/PicoDMA/IP_Library
