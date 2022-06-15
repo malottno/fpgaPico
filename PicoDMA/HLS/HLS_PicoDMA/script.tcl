@@ -12,7 +12,7 @@ open_solution "HLS_PicoDMA" -flow_target vivado
 set_part {xc7a50tcsg325-2}
 create_clock -period 10 -name default
 config_export -output C:/Users/Nick/git/fpgaPico/PicoDMA/IP_Library
-#source "./HLS/HLS_PicoDMA/directives.tcl"
+source "./HLS/HLS_PicoDMA/directives.tcl"
 csim_design -clean -O
 csynth_design
 cosim_design -O

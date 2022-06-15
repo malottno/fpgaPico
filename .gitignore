@@ -1,7 +1,6 @@
 
 *.xci
 *.bda
-*.aps
 *.directive
 *.launch
 *.apfmapping
