@@ -15,14 +15,25 @@
       "DevId": "",
       "RevId": "",
       "xlconstant_3": "",
-      "clk_wiz": "",
-      "passPointerArray_0": ""
+      "passPointerArray_0": "",
+      "util_ds_buf_0": ""
     },
     "interface_ports": {
       "pcie_mgt": {
         "mode": "Master",
         "vlnv_bus_definition": "xilinx.com:interface:pcie_7x_mgt:1.0",
         "vlnv": "xilinx.com:interface:pcie_7x_mgt_rtl:1.0"
+      },
+      "sys": {
+        "mode": "Slave",
+        "vlnv_bus_definition": "xilinx.com:interface:diff_clock:1.0",
+        "vlnv": "xilinx.com:interface:diff_clock_rtl:1.0"
+      }
+    },
+    "ports": {
+      "sys_rst_n": {
+        "type": "rst",
+        "direction": "I"
       }
     },
     "components": {
@@ -118,20 +129,26 @@
           }
         }
       },
-      "clk_wiz": {
-        "vlnv": "xilinx.com:ip:clk_wiz:6.0",
-        "xci_name": "PCIe_DMA_Interface_clk_wiz_0",
-        "xci_path": "ip\\PCIe_DMA_Interface_clk_wiz_0\\PCIe_DMA_Interface_clk_wiz_0.xci",
-        "inst_hier_path": "clk_wiz"
-      },
       "passPointerArray_0": {
         "vlnv": "xilinx.com:hls:passPointerArray:1.0",
-        "xci_name": "PCIe_DMA_Interface_passPointerArray_0_5",
-        "xci_path": "ip\\PCIe_DMA_Interface_passPointerArray_0_5\\PCIe_DMA_Interface_passPointerArray_0_5.xci",
+        "xci_name": "PCIe_DMA_Interface_passPointerArray_0_7",
+        "xci_path": "ip\\PCIe_DMA_Interface_passPointerArray_0_7\\PCIe_DMA_Interface_passPointerArray_0_7.xci",
         "inst_hier_path": "passPointerArray_0"
+      },
+      "util_ds_buf_0": {
+        "vlnv": "xilinx.com:ip:util_ds_buf:2.2",
+        "xci_name": "PCIe_DMA_Interface_util_ds_buf_0_0",
+        "xci_path": "ip\\PCIe_DMA_Interface_util_ds_buf_0_0\\PCIe_DMA_Interface_util_ds_buf_0_0.xci",
+        "inst_hier_path": "util_ds_buf_0"
       }
     },
     "interface_nets": {
+      "sys_1": {
+        "interface_ports": [
+          "sys",
+          "util_ds_buf_0/CLK_IN_D"
+        ]
+      },
       "xdma_0_M_AXI_LITE": {
         "interface_ports": [
           "xdma_0/M_AXI_LITE",
@@ -152,10 +169,28 @@
           "xdma_0/cfg_dev_id_pf0"
         ]
       },
-      "clk_wiz_clk_out1": {
+      "sys_rst_n_1": {
         "ports": [
-          "clk_wiz/clk_out1",
+          "sys_rst_n",
+          "xdma_0/sys_rst_n"
+        ]
+      },
+      "util_ds_buf_0_IBUF_OUT": {
+        "ports": [
+          "util_ds_buf_0/IBUF_OUT",
           "xdma_0/sys_clk"
+        ]
+      },
+      "xdma_0_axi_aclk": {
+        "ports": [
+          "xdma_0/axi_aclk",
+          "passPointerArray_0/ap_clk"
+        ]
+      },
+      "xdma_0_axi_aresetn": {
+        "ports": [
+          "xdma_0/axi_aresetn",
+          "passPointerArray_0/ap_rst_n"
         ]
       },
       "xlconstant_0_dout": {

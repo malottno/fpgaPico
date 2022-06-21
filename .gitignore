@@ -27,3 +27,4 @@ PicoDMA/IP_Library/export.zip
 PicoDMA/IP_Library/*
 PicoDMA/FPGA/PicoDMA.gen/sources_1/bd/PCIe_DMA_Interface/PCIe_DMA_Interface.bxml
 PicoDMA/FPGA/PicoDMA.srcs/sources_1/bd/PCIe_DMA_Interface/ui/bd_df25f422.ui
+*.bak

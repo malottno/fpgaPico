@@ -3,11 +3,12 @@
 data_t A[10][10];
 
 
-data_t passPointerArray(data_t B[10][10], int sum) {
+void passPointerArray(data_t B[10][10], int* sum) {
 	data_t i, j;
 
 #pragma HLS INTERFACE mode=s_axilite port=B
 #pragma HLS INTERFACE s_axilite port=sum
+#pragma HLS INTERFACE s_axilite port=return
 
 	//Copy Array
 	for(i = 0; i < 10; i++)
@@ -15,11 +16,10 @@ data_t passPointerArray(data_t B[10][10], int sum) {
 			A[i][j] = B[i][j];
 
 	//Sum input
-	sum = 0;
+	int total = 0;
 	for(i = 0; i < 10; i++)
 		for(j = 0; j < 10; j++)
-			sum += (A[i][j]);
+			total += (A[i][j]);
 
-	return sum;
-
+	*sum = total;
 }

@@ -14,7 +14,7 @@ int main(){
 	}
 
 	//Call the function
-	passPointerArray(din, dout);
+	passPointerArray(din, &dout);
 
 	if(dout == total){
 		printf("TEST PASSED!");

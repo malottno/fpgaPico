@@ -5,9 +5,9 @@
 ############################################################
 open_project HLS
 set_top passPointerArray
-add_files HLS/interface.c
 add_files HLS/interface.h
-add_files -tb HLS/interface_test.c
+add_files HLS/interface.c
+add_files -tb HLS/interface_test.c -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "HLS_PicoDMA" -flow_target vivado
 set_part {xc7a50tcsg325-2}
 create_clock -period 10 -name default
